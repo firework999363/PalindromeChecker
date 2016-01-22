@@ -16,7 +16,22 @@ public void setup()
 }
 public boolean palindrome(String word)
 {
-  //your code here
-  return false;
+  String temp = new String();
+  String temp2 = word.toLowerCase();
+  for (int e=0; e<temp2.length(); e++)
+  {
+    if (Character.isLetter(temp2.charAt(e)))
+    {
+      temp = temp + temp2.substring(e, e+1);
+    }
+  }
+  for (int i=0; i<temp.length()/2; i++)
+  {
+    if (temp.charAt(i) != temp.charAt(temp.length()-(i+1)))
+    {
+      return false;
+    }
+  }
+  return true;
 }
 
